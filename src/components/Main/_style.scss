@@ -1,0 +1,23 @@
+.main {
+  position: relative;
+  overflow-y: auto;
+  margin: 1rem 0 1rem 0.75rem;
+  padding-right: 0.75rem;
+  max-height: 80vh;
+  &__btn {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;    
+    width: 10.5rem;
+    height: 10.5rem;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 100%;
+    color: #fff;
+    background: rgba(255, 0, 127, 1);
+    box-shadow: 0px 0 15px rgba(0, 0, 0, .5);  
+    margin: 10vh auto;
+  }
+}
