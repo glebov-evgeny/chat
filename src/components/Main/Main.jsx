@@ -1,21 +1,21 @@
 
-import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {Chat} from "../Chat/Chat"
 
 function Main(props) {
-  const { login } = props;
+  const {
+    handlerLogin = Function.prototype,
+    login,
+    user,
+    firebase
+  } = props;
 
 return (
   <main className="main">
-    <Router> 
-      <Switch> 
-          {login ? (
-             <Route path='/' component={Chat} exact />
-          ) : (
-            <button className="main__btn">Логин</button>
-          )}
-      </Switch>
-    </Router>
+    {login ? (
+        <Chat user={user}/>
+    ) : (
+      <button className="main__btn" onClick={handlerLogin}>Логин</button>
+    )}
   </main>
   )
 }

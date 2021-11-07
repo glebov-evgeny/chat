@@ -3,7 +3,9 @@
   overflow-y: auto;
   margin: 1rem 0 1rem 0.75rem;
   padding-right: 0.75rem;
-  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   &__btn {
     display: flex;
     text-align: center;

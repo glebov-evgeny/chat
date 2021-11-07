@@ -1,5 +1,10 @@
+
 function Header(props) {
-  const { login } = props;
+  const {
+    handlerLogin = Function.prototype, 
+    handlerLoginOut = Function.prototype,
+    login
+  } = props
 
   return (
     <header className="header">
@@ -11,9 +16,9 @@ function Header(props) {
         </div>
         <div className="header__nav">
           {login ? (
-            <button className="header__btn">Выйти</button>
+            <button className="header__btn" onClick={handlerLoginOut}>Выйти</button>
           ) : (
-            <button className="header__btn">Логин</button>
+            <button className="header__btn" onClick={handlerLogin}>Логин</button>
           )}
         </div>
       </div>
