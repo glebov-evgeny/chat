@@ -25,8 +25,7 @@ function App() {
   const [login, setLogin] = useState(false);
   /* стэйт залогинен пользователь или нет */
   const [user, setUser] = useState([])
- /* стэйт информация о пользователе */
-
+  /* стэйт информация о пользователе */
 
   /* start logIN / logOUT */
   const auth = getAuth();
@@ -40,7 +39,7 @@ function App() {
       setLogin(true)
       setUser(user || [])
 
-      console.log(user)
+      // console.log(user)
     }).catch((error) => {
       console.error(error)
     });
