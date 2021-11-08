@@ -9,6 +9,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 /* инициализация авторизации Google */
 
+// eslint-disable-next-line
 const firebase = initializeApp(
   {
     apiKey: "AIzaSyDpwhpepw1f31gclJpDwp0UeIEJnBCeFsk",
@@ -28,7 +29,7 @@ function App() {
   /* стэйт информация о пользователе */
 
   
-  /* start logIN / logOUT */
+  /* start login logic */
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
 
@@ -54,7 +55,7 @@ function App() {
     });
   }
 
-  /* end logIN / logOUT */
+  /* end login logic */
 
   return (
     <div className="app">

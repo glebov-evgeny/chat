@@ -1,6 +1,5 @@
 import { useState, useEffect} from "react";
-import { getFirestore, collection, addDoc, serverTimestamp, doc, onSnapshot, query, where } from "firebase/firestore"
-import { useCollectionData } from "react-firebase-hooks/firestore"
+import { getFirestore, collection, addDoc, serverTimestamp, onSnapshot, query } from "firebase/firestore"
 
 
 
