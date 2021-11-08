@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { getFirestore, collection, addDoc, getDocs, serverTimestamp } from "firebase/firestore"
+import { useState, useEffect} from "react";
+import { getFirestore, collection, addDoc, serverTimestamp, doc, onSnapshot, query, where } from "firebase/firestore"
 import { useCollectionData } from "react-firebase-hooks/firestore"
 
 
@@ -7,8 +7,10 @@ import { useCollectionData } from "react-firebase-hooks/firestore"
 function Chat(props) {
   const {user} = props
   const [value, setValue] = useState('');
-  const [data, setData] = useState([]);
-  
+
+  const [messages, setMessages] = useState([]);
+
+
   const db = getFirestore();
 
   /* Отправка данных */
@@ -25,13 +27,39 @@ function Chat(props) {
   };
 
   /* Получение данных */
-  const [messages, loading] = useCollectionData(
-    collection(db, 'chat'),{}
-  )
+  useEffect(() => {
+    const getData = query(collection(db, 'chat'))
+    onSnapshot(getData, (querySnapshot) => {
+      var arr = [];
+      querySnapshot.forEach(function(doc) {
+        console.log(doc.data().createAt, " => ", doc.data());
+        arr.push(doc.data());
+      })
+      arr.sort((a,b) => 
+        (a.createAt - b.createAt)
+      )
+      setMessages(arr);
+  });
+  }, [db])
 
   return (
     <section className="chat">
-      <div className="chat__content"></div>
+      <div className="chat__content">
+      {messages.map(
+        (item)  => (
+              <div className="chat__item" key={item.createAt} id={item.createAt}>
+                <div className="chat__item-photo">
+                  <img src={item.photo} alt={item.user}/>
+                </div>
+                <div className="chat__item-content">
+                  
+                  <p className="chat__item-title">{item.user}</p>
+                  <p className="chat__item-text">{item.text}</p>
+                </div>
+              </div>
+        )        
+      )}
+      </div>
       <div className="chat__logic">
         <textarea
           className="chat__textarea"

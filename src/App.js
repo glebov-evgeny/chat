@@ -27,6 +27,7 @@ function App() {
   const [user, setUser] = useState([])
   /* стэйт информация о пользователе */
 
+  
   /* start logIN / logOUT */
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
@@ -65,7 +66,7 @@ function App() {
 
       <div className="app__content">
         <Header handlerLogin={handlerLogin} login={login} handlerLoginOut={handlerLoginOut}/>
-        <Main login={login} handlerLogin={handlerLogin} handlerLoginOut={handlerLoginOut} user={user} firebase={firebase}/>
+        <Main login={login} handlerLogin={handlerLogin} handlerLoginOut={handlerLoginOut} user={user}/>
       </div>
     </div>
   );

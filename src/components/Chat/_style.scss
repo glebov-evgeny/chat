@@ -3,12 +3,19 @@
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+    &__content{
+        max-height: 55vh;
+        overflow-y: scroll;
+    }
+    &__logic{
+        margin-top: 2rem;
+    }
     &__textarea{
         width: 100%;
         max-width: 100%;
         min-height: 7rem;
         border: none;
-        border-radius: 5px;
+        border-radius: 15px;
         font-size: 1rem;
         line-height: 130%;
         color: #000;
@@ -40,7 +47,7 @@
         width: 100%;
         max-width: 320px;
         min-height: 55px;
-        border-radius: 5px;
+        border-radius: 15px;
         font-weight: bold;
         font-size: 1rem;
         line-height: 100%;
@@ -49,5 +56,40 @@
         background: #ff007f;
         box-shadow: 0 0 20px rgba(102, 102, 102, 0.4);
         margin: 0.75rem auto 0;
+    }
+    &__item{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background: #fff;
+        width: 80%;
+        margin-bottom: 0.5rem;
+        margin-left: auto;
+        margin-right: 0.5rem;
+        border-radius: 15px;
+        overflow: hidden;
+        &-photo{
+            padding: 0.5rem;
+            flex-shrink: 0;
+            img{
+                border-radius: 50%;
+                border: 2px solid #fff;
+            }
+        }
+        &-content{
+            padding: 1rem;
+            width: 100%;
+        }
+        &-title{
+            font-weight: bold;
+            font-size: 0.85rem;
+            line-height: 120%;
+            margin-bottom: 0.5rem;
+        }
+        &-text{
+            font-size: 0.85rem;
+            line-height: 120%;
+        }
     }
 }

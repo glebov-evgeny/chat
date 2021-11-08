@@ -5,14 +5,14 @@ function Main(props) {
   const {
     handlerLogin = Function.prototype,
     login,
-    user,
-    firebase
+    user
+
   } = props;
 
 return (
   <main className="main">
     {login ? (
-        <Chat user={user}/>
+        <Chat user={user} />
     ) : (
       <button className="main__btn" onClick={handlerLogin}>Логин</button>
     )}
