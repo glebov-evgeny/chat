@@ -60,7 +60,7 @@ function App() {
   return (
     <div className="app">
       <div className="app__video">
-        <video loop muted autoPlay className="app__video-content">
+        <video loop autoPlay muted playsInline disablePictureInPicture className="app__video-content">
           <source src={video} type="video/mp4" />
         </video>
       </div>

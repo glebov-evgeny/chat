@@ -4,16 +4,16 @@
     justify-content: space-between;
     flex-grow: 1;
     &__content{
-        max-height: 55vh;
+        max-height: 50vh;
         overflow-y: scroll;
     }
     &__logic{
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
     &__textarea{
         width: 100%;
         max-width: 100%;
-        min-height: 7rem;
+        min-height: 4rem;
         border: none;
         border-radius: 15px;
         font-size: 1rem;
@@ -45,7 +45,7 @@
         align-items: center;
         text-align: center;
         width: 100%;
-        max-width: 320px;
+        max-width: 100%;
         min-height: 55px;
         border-radius: 15px;
         font-weight: bold;
@@ -55,7 +55,7 @@
         color: #fff;
         background: #ff007f;
         box-shadow: 0 0 20px rgba(102, 102, 102, 0.4);
-        margin: 0.75rem auto 0;
+        margin: 0.5rem auto 0;
     }
     &__item{
         display: flex;
@@ -63,22 +63,27 @@
         align-items: flex-start;
         justify-content: flex-start;
         background: #fff;
-        width: 80%;
+        width: 90%;
         margin-bottom: 0.5rem;
-        margin-left: auto;
-        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        margin-right: auto;
         border-radius: 15px;
         overflow: hidden;
+        &-current{
+            margin-left: auto;
+            margin-right: 0.5rem;
+        }
         &-photo{
             padding: 0.5rem;
             flex-shrink: 0;
             img{
+                max-width: 55px;
                 border-radius: 50%;
                 border: 2px solid #fff;
             }
         }
         &-content{
-            padding: 1rem;
+            padding: 1rem 1rem 1rem 0.25rem;            
             width: 100%;
         }
         &-title{
