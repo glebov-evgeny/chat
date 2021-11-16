@@ -62,7 +62,7 @@
         flex-direction: row;
         align-items: flex-start;
         justify-content: flex-start;
-        background: #fff;
+        background: #ffc2e1;
         width: 90%;
         margin-bottom: 0.5rem;
         margin-left: 0.5rem;
@@ -72,6 +72,7 @@
         &-current{
             margin-left: auto;
             margin-right: 0.5rem;
+            background: #ffe7f4;
         }
         &-photo{
             padding: 0.5rem;
